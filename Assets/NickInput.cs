@@ -11,10 +11,13 @@ public class NickInput : NetworkBehaviour
     public Player player;
     public TMP_InputField nickInput;
     public ConnectedPlayers connectedPlayers;
+    public ChatWindow chatWindow;
+    public GameObject messageInput;
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
         connectedPlayers = FindObjectOfType<ConnectedPlayers>();
+        chatWindow = FindObjectOfType<ChatWindow>();
 
         nickInput = GetComponent<TMP_InputField>();
         nickBtn.interactable = false;
@@ -22,6 +25,8 @@ public class NickInput : NetworkBehaviour
         {
             player.SetPlayerName(nickInput.text);
             connectedPlayers.AddPlayerServerRpc(nickInput.text);
+            chatWindow.AddMessageServerRpc("Connected!", nickInput.text);
+            messageInput.SetActive(true);
             gameObject.SetActive(false);
         });
     } 

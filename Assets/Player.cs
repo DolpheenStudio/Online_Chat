@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Player : NetworkBehaviour
 {
+    public string playerName;
     void Start()
     {
 
@@ -13,6 +14,6 @@ public class Player : NetworkBehaviour
 
     public void SetPlayerName(string name)
     {
-
+        playerName = name;
     }
 }

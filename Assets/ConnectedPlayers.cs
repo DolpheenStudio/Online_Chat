@@ -8,6 +8,7 @@ using UnityEngine;
 public class ConnectedPlayers : NetworkBehaviour
 {
     public TMP_Text text;
+
     public override void OnNetworkSpawn()
     {
         text = GetComponent<TMP_Text>();
@@ -18,7 +19,6 @@ public class ConnectedPlayers : NetworkBehaviour
     public void AddPlayerServerRpc(string playerName)
     {
         text.text += playerName + "\n";
-        Debug.Log(OwnerClientId + " " + playerName);
         AddPlayerClientRpc(playerName);
     }
 
