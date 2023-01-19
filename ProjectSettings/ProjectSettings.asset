@@ -799,10 +799,10 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 9c8cb59d-520a-43a9-a90c-385d4b9c5141
+  cloudProjectId: 245511b7-3e0a-4ad5-beca-c503e7666e17
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Online Game
+  projectName: Online Chat
   organizationId: dolpheen-studio
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
